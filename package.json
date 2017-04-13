@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/jcollum/suedesheep/issues"
   },
-  "homepage": "https://github.com/jcollum/suedesheep#readme"
+  "homepage": "https://github.com/jcollum/suedesheep#readme",
+  "dependencies": {
+    "gulp": "^3.9.1"
+  }
 }
