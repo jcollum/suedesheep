@@ -2,7 +2,6 @@ const validator = require('validate.js');
 const Promise = require('bluebird');
 const request = require('request-promise');
 
-
 const parseWebsite = url => {
   return new Promise((resolve, reject) => {
     request({
