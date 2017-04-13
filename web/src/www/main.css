@@ -1,0 +1,24 @@
+html {
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  font-size: 13px;
+  line-height: 20px;
+}
+
+.message{
+  margin-top: 20px;
+  color: #7acb14;
+}
+
+.warn {
+  margin-top: 20px;
+  color: #fedd00;
+  font-weight: bold;
+}
+.error {
+  margin-top: 20px;
+  color: #ff6e5b;
+  font-weight: bold;
+}
