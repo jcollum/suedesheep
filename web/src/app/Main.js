@@ -14,6 +14,9 @@ const styles = {
     paddingTop: 100
   },
   lowerContainer: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
     textAlign: 'center',
     paddingTop: 20
   }
@@ -77,7 +80,7 @@ class Main extends Component {
 
   generateRows(links) {
     if (!links) {
-      return <div />;
+      return <tr />;
     } else {
       let i = 0;
       let result = [];
@@ -85,8 +88,10 @@ class Main extends Component {
         let link = links[i];
         result.push({ index: i, href: link.href, text: link.text });
       }
-      return result.map(link => {
-        return <div key={link.index}>{link.href}: {link.text}</div>;
+      return links.map((link) => {
+        return (
+          <tr key={link.index}><td>{link.text}</td><td> {link.href}</td></tr>
+        );
       });
     }
   }
@@ -97,9 +102,12 @@ class Main extends Component {
 
     console.dir({ headerComponents, rowComponents });
     return (
-      <div>
-        {rowComponents}
-      </div>
+      <table>
+        <thead>{headerComponents}</thead>
+        <tbody>
+          {rowComponents}
+        </tbody>
+      </table>
     );
   }
 

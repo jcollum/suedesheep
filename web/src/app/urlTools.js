@@ -24,11 +24,12 @@ export const getLinks = url => {
         let hyperlinks = $('a').slice(0,10); //jquery get all hyperlinks
         let textLinks = $(hyperlinks).map(function(i, link) {
           return {
+            index: i,
             href: ($(link).attr('href') || '').trim(),
             text: ($(link).text() || '(no text)').trim()
           };
         });
-        return resolve(textLinks);
+        return resolve(textLinks.toArray());
       })
       .catch(err => {
         reject(new Error(`Failed to load, error: ${err}`));
