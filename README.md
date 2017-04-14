@@ -6,7 +6,8 @@
 
 ```
 cd [repo dir]
-yarn install
+yarn install # or npm
+npm test
 ```
 
 From the command line, pass in a list of urls to validate:
@@ -50,7 +51,7 @@ Pretty simple, create a Hapi.js API with a GET route like `/validate/{url}` (url
 ```
 $ cd [repo dir]
 $ cd web
-$ yarn install
+$ yarn install # or npm
 $ npm start
 ```
 
@@ -68,4 +69,4 @@ Starting the first project as an API would have saved time trying to find a work
 {"links": [...], "status": {"error": null}}
 {"links": null, "status": {"error": "404 Not Found"}}
 ```   
-The UI wouldn't change much, it would just have simpler code. I don't think I'd use HTML status codes if the API failed to fetch a URL, they wouldn't encompass enough errors (like poorly formatted html mentioned above). 
+The UI wouldn't change much, it would just have simpler code. I don't think I'd use HTML status codes if the API failed to fetch a URL, they wouldn't encompass enough errors (like poorly formatted html mentioned above).
