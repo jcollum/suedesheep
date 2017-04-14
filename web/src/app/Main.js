@@ -35,7 +35,7 @@ class Main extends Component {
 
     this.state = {
       message: null,
-      url: 'http://stackoverflow.com/',
+      url: 'https://news.google.com/',
       messageClass: 'message',
       links: null
     };
@@ -73,8 +73,8 @@ class Main extends Component {
 
   generateHeaders() {
     // generate our header (th) cell components
-    return cols.map((i, colData) => {
-      return <th key={colData.key}> {colData.label} </th>;
+    return cols.map(colData => {
+      return <th  className="text-left"  key={colData.key}> {colData.label} </th>;
     });
   }
 
@@ -88,27 +88,33 @@ class Main extends Component {
         let link = links[i];
         result.push({ index: i, href: link.href, text: link.text });
       }
-      return links.map((link) => {
+      return links.map(link => {
         return (
-          <tr key={link.index}><td>{link.text}</td><td> {link.href}</td></tr>
+          <tr key={link.index}><td>{link.text}</td><td>{link.href}</td></tr>
         );
       });
     }
   }
 
   getLinksTable() {
-    let headerComponents = this.generateHeaders();
-    let rowComponents = this.generateRows(this.state.links);
+    if (this.state.links) {
+      let headerComponents = this.generateHeaders();
+      let rowComponents = this.generateRows(this.state.links);
 
-    console.dir({ headerComponents, rowComponents });
-    return (
-      <table>
-        <thead>{headerComponents}</thead>
-        <tbody>
-          {rowComponents}
-        </tbody>
-      </table>
-    );
+      console.dir({ headerComponents, rowComponents });
+      return (
+        <table class='table-fill'>
+          <thead>
+            <tr>
+              {headerComponents}
+            </tr>
+          </thead>
+          <tbody>
+            {rowComponents}
+          </tbody>
+        </table>
+      );
+    }
   }
 
   render() {
@@ -124,8 +130,9 @@ class Main extends Component {
           </h3>
           <TextField
             hintText="Url"
-            onChange={this.updateUrl}
+            onChange={(event, newVal)=>{this.updateUrl(event, newVal)}}
             value={this.state.url}
+            style={{width: '80%'}}
           />
           <br />
           <RaisedButton
