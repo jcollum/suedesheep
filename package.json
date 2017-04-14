@@ -1,10 +1,10 @@
 {
   "name": "emma-sample",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "lab"
+    "test": "node validate.js \"https://www.google.com\" \"hts://www.google.com\"  \"https://alksdjf.google.com\""
   },
   "repository": {
     "type": "git",
@@ -26,7 +26,7 @@
     "request": "^2.81.0",
     "request-promise": "^4.2.0",
     "validate.js": "^0.11.1"
-  }
+  },
   "devDependencies": {
     "json-loader": "^0.5.4"
   }
